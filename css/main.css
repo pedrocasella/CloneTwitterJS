@@ -12,6 +12,7 @@
     border-right-style: solid;
     border-left: #000000;
     border-right-width: .5px;
+    background-color: #ffffffff;
 }
 
 .timeline{
@@ -20,7 +21,7 @@
     background-color: ffffffff;
     position: absolute;
     left: 25%;
-
+    z-index: -1;
 }
 
 .right-aside{
@@ -90,6 +91,39 @@
     font-weight: bolder;
 }
 
+.left-aside ul li .home-icon{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background-image: url(./../icon/home-icon.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translateY(-4px);
+}
+
+.left-aside ul li .profile-icon{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background-image: url(./../icon/profile-icon.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translateY(-4px);
+}
+
+.left-aside ul li .game-icon{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background-image: url(./../icon/game-icon.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translateY(-4px);
+}
+
 .left-aside ul li{
     background-color: #0267c1;
     color: white;
@@ -104,6 +138,10 @@
     transition: linear .3s;
     cursor: pointer;
     background-color: #4b9be3;
+}
+
+.left-aside ul li span{
+    margin-left: 3rem;
 }
 
 .profile-card{
@@ -146,4 +184,21 @@
     font-weight: bolder;
     font-size: 10pt;
     color: #4e4e4e;
+}
+
+/* Right Aside */
+
+.right-aside h4{
+    text-align: left;
+    margin-left: 3rem;
+    margin-top: 1rem;
+}
+
+.right-aside .search-users{
+    margin: .5rem;
+    width: 200px;
+    height: 30px;
+    border-radius: 30px;
+    padding-left: 3rem;
+    border-style: solid;
 }
