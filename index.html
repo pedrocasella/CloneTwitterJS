@@ -4,37 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/main.css">
-    <title>WorldBook - Timeline</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <title>WorldBook - Login</title>
 </head>
 <body>
-    <aside class="left-aside" id="left-aside">
-        <center>
-            <ul class="nav-left" id="nav-left">
-                <li class="home" id="home"><div class="home-icon"></div><span>Início</span></li>
-                <li class="profile" id="profile"><div class="profile-icon"></div><span>Perfil</span></li>
-                <li class="games" id="games"><div class="game-icon"></div><span>Jogos</span></li>
-
+    <div class="background"></div>
+    <nav class="nav-bar">
+        <div class="logIn-btn" id="logIn-btn"><div class="google-icon"></div><span>Entre</span></div>
+    </nav>
+    <center>
+        <section class="sign-up" id="sign-up">
+            <center><label for="select-picture" class="profile-picture" id="profile-picture"></label></center>
+            <div class="register-area">
+                <input type="file" name="select-picture" id="select-picture" class="select-picture">
+                <label>Primeiro Nome</label><br>
+                <input type="text" name="name" id="select-first-name" autocomplete="none"><br><br>
+                <label>Último Nome</label><br>
+                <input type="text" name="name" id="select-last-name" autocomplete="none"><br><br>
+                <label>Usuário</label><br>
+                <input type="text" name="name" id="select-user" autocomplete="none">
+            </div>
+            <ul class="ul-btn">
+                <li><div class="update-btn" id="update-btn">Atualizar</div></li>
+                <li><div class="skip-btn" id="skip-btn">Pular</div></li>
             </ul>
-        </center>
-        <div class="profile-card" id="profile-card">
-            <div class="circle-user" id="circle-user"></div>
-            <span class="your-name" id="your-name">Seu Nome</span>
-            <span class="your-user" id="your-user">@seuUsuario_</span>
-        </div>
-    </aside>
-    <section class="timeline" id="timeline">
-        <div class="post-area">
-        <h2>Página Inicial</h2>
-            <div class="circle-user" id="circle-user"></div><input type="text" name="post-text" placeholder="O que deseja compartilhar com o mundo hoje?" id="post-text" class="post-text"><hr class="hr-text-post">
-        </div>
-    </section>
-    <aside class="right-aside" id="right-aside">
-        <center>
-            <h4>Encontre novos amigos:</h2>
-            <input type="text" name="" id="search-users" class="search-users" placeholder="Encontre mais usuários">
-            <div class="search-btn"><span></span></div>
-        </center>
-    </aside>
+        </section>
+        
+    </center>
+    <script type="module" src="./script/app.js"></script>
 </body>
 </html>

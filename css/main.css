@@ -4,6 +4,25 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.loading{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.loading .loading-icon{
+    margin-top: 15%;
+    width: 200px;
+    height: 200px;
+    background-image: url(./../background/CreepyPessimisticAlbino-max-1mb.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .left-aside{
     width: 25%;
     height: 100%;
@@ -36,6 +55,8 @@
     border-left-width: .5px;
 }
 
+/* Post Area */
+
 .post-area{
     width: 100%;
     height: auto;
@@ -62,8 +83,8 @@
 .timeline .post-area .post-text{
     margin-top: 2rem;
     margin-left: 15%;
-    width: 75%;
-    height: 40px;
+    width: 65%;
+    height: 60px;
     border-style: none;
     padding: .5rem;
     font-size: 12pt;
@@ -80,6 +101,141 @@
             margin-left: 15%;
             margin-right: 25%;
             margin-bottom: 2rem;
+        }
+
+.timeline .post-area .post-btn{
+    width: 100px;
+    height: 30px;
+    background-color: #0267c1;
+    color: #ffffffff;
+    font-weight: bolder;
+    border-radius: 30px;
+    margin-left: 70%;
+    margin-bottom: 1rem;
+
+}
+
+.timeline .post-area .post-btn:hover{
+    transition: linear .3s;
+    cursor: pointer;
+    background-color: #4b9be3;
+}
+
+.timeline .post-area .post-btn span{
+    position: absolute;
+    transform: translate(20px, 6px);
+}
+
+.timeline .post-area .post-btn .send-icon{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-image: url(./../icon/send-icon.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translate(75px, 8px);
+}
+
+.timeline .post-area .preview-image{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: none;
+    width: 100px;
+    height: 100px;
+    background-color: #000000;
+    border-radius: 8px;
+    margin-left: 10rem;
+    margin-top: -4rem;
+    margin-bottom: 1rem;
+    padding-top: 2px;
+}
+
+.timeline .post-area .preview-image .cancel-img{
+    color: #ffffffff;
+    margin-left: 85%;
+    -webkit-box-shadow: 4px 3px 41px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 3px 41px 0px rgba(0,0,0,0.75);
+    box-shadow: 4px 3px 41px 0px rgba(0,0,0,0.75);
+}
+
+.timeline .post-area .preview-image .cancel-img:hover{
+    transition: linear .3s;
+    cursor: pointer;
+}
+
+.timeline .post-area .up-image{
+    position: absolute;
+    background-image: url(./../icon/image-icon.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 60%;
+    border-radius: 100%;
+    width: 15px;
+    height: 15px;
+    padding: 15px;
+    transform: translate(100px, -60px);
+}
+
+.timeline .post-area .up-image:hover{
+    transition: linear .3s;
+    cursor: pointer;
+    background-color: rgb(219, 219, 219);
+}
+    .timeline .post-area .up-post-picture{
+        display: none; 
+    }
+
+        /* Posts */
+        .user-post{
+            width: 100%;
+            height: auto;
+            border-bottom-style: solid;
+            border-bottom-color: #000000;
+            border-width: .5px;
+        }
+
+        .user-post .circle-user{
+            width: 60px;
+            height: 60px;
+            background-color: #4e4e4e;
+            border-radius: 100%;
+            margin: 1rem;
+        }
+
+        .user-post .ul-post{
+            list-style: none;
+            display: inline-flex;
+        }
+
+        .user-post .ul-user{
+            list-style: none;
+            margin-top: 1.3rem;
+        }
+
+        .user-post .ul-user .your-name{
+            font-weight: bolder;
+        }
+
+        .user-post .ul-user .your-user{
+            font-size: 9pt;
+            font-weight: bolder;
+            color: #4e4e4e;
+        }
+
+        .user-post .text-posted{
+            margin: 0rem 1rem .5rem 1rem;
+            text-align: justify;
+            overflow-x: hidden;
+        }
+
+        .user-post .img-posted{
+            width: 90%;
+            max-width: 300px;
+            object-fit: cover;
+            border-radius: 9px;
+            margin-bottom: 1rem;
         }
 
 /* Aside Left */
@@ -201,4 +357,26 @@
     border-radius: 30px;
     padding-left: 3rem;
     border-style: solid;
+}
+
+.search-btn{
+    width: 100px;
+    height: 30px;
+    background-color: #0267c1;
+    color: #ffffffff;
+    font-weight: bolder;
+    border-radius: 30px;
+    
+}
+
+.search-btn:hover{
+    transition: linear .3s;
+    background-color: #4b9be3;
+    cursor: pointer;
+}
+
+.search-btn span{
+    position: absolute;
+    font-size: 10pt;
+    transform: translate(-32px, 6px);
 }

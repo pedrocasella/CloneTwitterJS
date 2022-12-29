@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>WorldBook - Timeline</title>
+</head>
+<body>
+    <div class="loading" id="loading"><center><div class="loading-icon"></div></center></div>
+    <aside class="left-aside" id="left-aside">
+        <center>
+            <ul class="nav-left" id="nav-left">
+                <li class="home" id="home"><div class="home-icon"></div><span>Início</span></li>
+                <li class="profile" id="profile"><div class="profile-icon"></div><span>Perfil</span></li>
+                <li class="games" id="games"><div class="game-icon"></div><span>Jogos</span></li>
+
+            </ul>
+        </center>
+        <div class="profile-card" id="profile-card">
+            <div class="circle-user" id="circle-user"></div>
+            <span class="your-name" id="your-name"></span>
+            <span class="your-user" id="your-user"></span>
+        </div>
+    </aside>
+    <section class="timeline" id="timeline">
+        <div class="post-area">
+        <h2>Página Inicial</h2>
+            <div class="circle-user" id="circle-user"></div><textarea type="text" name="post-text" placeholder="O que deseja compartilhar com o mundo hoje?" id="post-text" class="post-text"></textarea><hr class="hr-text-post">
+            <div class="post-btn" id="post-btn"><span>Postar</span><div class="send-icon"></div></div>
+            <div class="preview-image" id="preview-image"><span class="cancel-img" id="cancel-img">X</span></div>
+            <label for="up-post-picture" class="up-image" id="up-image"></label>
+            <input type="file" name="picture" class="up-post-picture" id="up-post-picture">
+        </div>
+        <!-- Posts -->
+        <div class="posted-area" id="posted-area">
+            <!--<div class="user-post">
+                <ul class="ul-post">
+                    <li class="circle-user" id="circle-user"></li>
+                    <li>
+                        <ul class="ul-user">
+                            <li class="your-name" id="your-name">Seu Nome</li>
+                            <li class="your-user" id="your-user">@seuUsuario_</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p class="text-posted" id="text-posted">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt inventore omnis quibusdam eum voluptas dignissimos libero architecto debitis, consequatur autem facere illum ea suscipit ducimus minima eos beatae vero et.</p>
+                <center><img src="./img/AirBrush_20221106204041.jpg" alt="imagem" class="img-posted" id="img-posted"></center>
+            </div> -->
+            <!--<div class="user-post">
+                <ul class="ul-post">
+                    <li class="circle-user" id="circle-user"></li>
+                    <li>
+                        <ul class="ul-user">
+                            <li class="your-name" id="your-name"></li>
+                            <li class="your-user" id="your-user"></li>
+                        </ul>
+                    </li>
+                </ul>
+                <p class="text-posted" id="text-posted">Hey idk if its a bug but when i try to load version 1.4 i can not join the game and the server crashes, please help the older versions are fine but i´d like to play other versions of this mod please i want some answer. Hey idk if its a bug but when i try to load version 1.4 i can not join the game and the server crashes, please help the older versions are fine but id like to play other versions of this mod please i want some answer.</p>
+                <span class="reader" id="reader">Ler mais...</span>
+            </div> -->
+        </div>
+    </section>
+    <aside class="right-aside" id="right-aside">
+        <center>
+            <h4>Encontre novos amigos:</h2>
+            <input type="text" name="" id="search-users" class="search-users" placeholder="Encontre mais usuários">
+            <div class="search-btn"><span>Pesquisar</span></div>
+        </center>
+    </aside>
+    <script type="module" src="./script/logged.js"></script>
+</body>
+</html>
