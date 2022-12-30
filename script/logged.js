@@ -54,16 +54,22 @@ import { getDatabase, ref, set, child, get, update, push, onValue } from "https:
           });*/
           get(child(dbRef, 'global_posts/')).then((snapshot) => {
             if (snapshot.exists()) {
-              const data = snapshot.val()
               snapshot.forEach((childSnapshot)=>{
                 const key = childSnapshot.key
                 const data = childSnapshot.val()
                 const postArea = document.getElementById('posted-area')
                 postArea.innerHTML += '<div class="user-post" id="' + data.uid_post + '"><ul class="ul-post"><li class="circle-user" id="' + 'circleUser' + data.uid_post + '"></li><li><ul class="ul-user"><li class="your-name">' + data.name + '</li><li class="your-user">' + data.username + '</li></ul></li></ul><p class="text-posted" id="text-posted">' + data.text + '</p><center><img src="'+ data.image +'" alt="imagem" class="img-posted" id="img-posted"></center><hr><div class="time-post" id="time-post"><span>'+ data.time +'</span></div>'
-              })
-            } else {
-              console.log("No data available");
-            }
+                get(child(dbRef, 'user/' + data.uid_post)).then((snapshot) => {
+                  const data = snapshot.val()
+                  for(let i = 0; i <= document.querySelectorAll('#circleUser' + data.uid).length; i++){
+                    document.querySelectorAll('#circleUser' + data.uid)[i].style.backgroundImage = 'url(' + data.profile_picture + ')'
+                  }
+                  console.log(data)
+                  }).catch((error) => {
+                    console.error(error);
+                  });
+                 })
+                }
           }).catch((error) => {
             console.error(error);
           });
@@ -72,7 +78,6 @@ import { getDatabase, ref, set, child, get, update, push, onValue } from "https:
           get(child(dbRef, 'user/' + localStorage.getItem('worldbookuid') + '/')).then((snapshot) => {
             if (snapshot.exists()) {
                 const data = snapshot.val()
-                console.log(data.profile_picture)
                 for(let i = 0; i <= document.querySelectorAll('#circle-user').length; i++){
                     document.querySelectorAll('#circle-user')[i].style.backgroundImage = 'url(' + data.profile_picture + ')'
                 }

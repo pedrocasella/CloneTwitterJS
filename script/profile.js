@@ -103,6 +103,7 @@ import { getDatabase, ref, set, child, get, update, push, onValue } from "https:
         const description = document.getElementById('switch-description-input').value
         const background = document.getElementById('switch-background').style.backgroundImage.replaceAll('url(', '').replaceAll(')', '').replaceAll('"', '')
         const db = getDatabase();
+        //update profile
         update(ref(db, 'user/' + localStorage.getItem('worldbookuid')), {
             profile_picture: picture,
             name: name,
@@ -110,6 +111,7 @@ import { getDatabase, ref, set, child, get, update, push, onValue } from "https:
             description: description,
             background: background,
         })
+
         setTimeout(()=>{window.location.replace("profile.html")}, 1000*2)
 
         document.getElementById('post-loading').style.display = 'block'
