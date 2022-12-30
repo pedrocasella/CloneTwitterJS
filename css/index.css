@@ -61,7 +61,7 @@
 
 .sign-up{
     display: none;
-    position: fixed;
+    position: absolute;
     width: 400px;
     height: 500px;
     background-color: #ffffffff;
@@ -76,7 +76,10 @@
     padding: 50px;
     border-radius: 100%;
     background-color: rgb(150, 158, 158);
-    transform: translate(-50px, 30px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 1rem 4rem 1rem 4rem;
 }
 
 .sign-up .profile-picture:hover{

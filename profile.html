@@ -4,9 +4,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/profile.css">
     <title>WorldBook - Perfil</title>
 </head>
 <body>
-    
+     <!-- Loading -->
+     <div class="loading" id="loading"><center><div class="loading-icon"></div></center></div>
+     <div class="post-loading" id="post-loading"></div>
+     <div class="display-post-loading" id="display-post-loading"><center><div class="send-loading-gif"></div></center></div>
+     <!------------>
+     <!-- Edit Profile -->
+     <div class="edit-blackfilter" id="edit-blackfilter"></div>
+    <section class="edit-profile" id="edit-profile">
+        <div class="close-edit" id="close-edit">X</div>
+        <label for="switch-background-input"><div class="switch-background" id="switch-background"></div></label>
+        <input type="file" name="" id="switch-background-input" class="switch-background-input">
+        <label for="switch-picture-input" class="switch-picture" id="switch-picture"></label>
+        <input type="file" name="" id="switch-picture-input" class="switch-picture-input">
+        <ul>
+            <li>Altere seu nome:</li>
+            <li><input type="text" name="" id="switch-name-input" class="switch-name-input"></li>
+            <li>Altere seu usuário:</li>
+            <li><input type="text" name="" id="switch-user-input" class="switch-user-input"></li>
+            <li>Altere sua descrição:</li>
+            <li><input type="text" name="" id="switch-description-input" class="switch-description-input"></li>
+            <li><div class="switch-btn" id="switch-btn"><span>Salvar Alterações</span></div></li>
+        </ul>
+        
+    </section>
+     <!------------------>
+    <aside class="left-aside" id="left-aside">
+        <center>
+            <ul class="nav-left" id="nav-left">
+                <li class="home" id="home"><div class="home-icon"></div><span>Início</span></li>
+                <li class="profile" id="profile"><div class="profile-icon"></div><span>Perfil</span></li>
+                <li class="games" id="games"><div class="game-icon"></div><span>Jogos</span></li>
+
+            </ul>
+        </center>
+        <div class="profile-card" id="profile-card">
+            <div class="circle-user" id="circle-user"></div>
+            <span class="your-name" id="your-name"></span>
+            <span class="your-user" id="your-user"></span>
+        </div>
+    </aside>
+    <section class="profile-area" id="profile-area">
+        <div class="bios-area" id="bios-area">
+            <div class="cape" id="cape"><div class="circle-user-bios" id="circle-user"></div></div>
+            <div class="edit-btn" id="edit-btn"><span>Editar Perfil</span></div>
+            <ul class="datas">
+                <li class="name" id="your-name"></li>
+                <li class="username" id="your-user"></li>
+                <li class="description" id="description"></li>
+            </ul>
+        </div>
+    </section>
+    <script type="module" src="./script/profile.js"></script>
 </body>
 </html>

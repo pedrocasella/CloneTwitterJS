@@ -1,0 +1,390 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Loading */
+
+.loading{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.post-loading{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    z-index: 4;
+    overflow: hidden;
+    opacity: .5;
+}
+
+.display-post-loading{
+    display: none;
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    background-color: #ffffffff;
+    z-index: 5;
+    top: 30%;
+    left: 35%;
+    border-radius: 8px;
+    -webkit-box-shadow: 4px 3px 41px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 3px 41px 0px rgba(0,0,0,0.75);
+    box-shadow: 4px 3px 41px 0px rgba(0,0,0,0.75);
+}
+
+.display-post-loading .send-loading-gif{
+    width: 200px;
+    height: 200px;
+    background-image: url(./../background/Barline-Loading-Images-1.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* ----------------- */
+
+/* Edit Profile */
+
+.edit-blackfilter{
+    display: none;
+    background-color: #000000;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    opacity: .6;
+}
+
+.edit-profile{
+    display: none;
+    border-radius: 30px;
+    position: fixed;
+    width: 300px;
+    height: 400px;
+    background-color: #fff;
+    z-index: 3;
+    top: 10%;
+    left: 40%;
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.48); 
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.48);
+}
+
+.edit-profile .close-edit{
+    position: absolute;
+    margin-left: 270px;
+    margin-top: 5px;
+    font-weight: bolder;
+    z-index: 4;
+    text-shadow: 2px 2px 9px #CE5937;
+    cursor: pointer;
+}
+
+.switch-background{
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    background-color: #4e4e4e;
+    background-position: center;
+    background-repeat:no-repeat ;
+    background-size: cover;
+    z-index: 2;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.switch-background-input{
+    display: none;
+}
+
+.switch-picture-input{
+    display: none;
+}
+
+.switch-picture{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    padding: 30px;
+    background-color: #4e4e4e;
+    background-position: center;
+    background-repeat:no-repeat ;
+    background-size: cover;
+    border-radius: 100%;
+    left: 35%;
+    top: 5%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #fff;
+    z-index: 3;
+}
+
+.edit-profile ul{
+    list-style: none;
+    margin-top: 8rem;
+    margin-left: 4rem;
+}
+
+.edit-profile ul li{
+    margin: .5rem;
+    font-weight: bolder;
+}
+
+.edit-profile ul li input{
+    border-radius: 7px;
+    border-style: solid;
+    height: 20px;
+    padding-left: 4px;
+}
+
+.edit-profile ul .switch-btn{
+    width: 150px;
+    height: 40px;
+    background-color: rgb(35, 240, 35);
+    border-radius: 30px;
+}
+
+.edit-profile ul .switch-btn:hover{
+    transition: linear .3s;
+    background-color: rgb(8, 224, 8);
+    cursor: pointer;
+}
+
+.edit-profile ul .switch-btn span{
+    position: absolute;
+    margin-left: 7px;
+    margin-top: 10px;
+    color: #fff;
+}
+
+/*---------------*/
+.loading .loading-icon{
+    margin-top: 15%;
+    width: 200px;
+    height: 200px;
+    background-image: url(./../background/CreepyPessimisticAlbino-max-1mb.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Profile picture Local*/
+.circle-user-bios{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: #4e4e4e;
+    border-radius: 100%;
+    margin: 6rem 1rem 1rem 2rem;
+    transform: translate(0rem, 1rem);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/*---------------------*/
+
+/* Aside Left */
+.left-aside{
+    width: 25%;
+    height: 100%;
+    position: fixed;
+    background-color: ffffffff;
+    border-right-style: solid;
+    border-left: #000000;
+    border-right-width: .5px;
+    background-color: #ffffffff;
+}
+
+.left-aside ul{
+    list-style: none;
+    text-align: left;
+    font-size: 16pt;
+    font-weight: bolder;
+}
+
+.left-aside ul li .home-icon{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background-image: url(./../icon/home-icon.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translateY(-4px);
+}
+
+.left-aside ul li .profile-icon{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background-image: url(./../icon/profile-icon.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translateY(-4px);
+}
+
+.left-aside ul li .game-icon{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background-image: url(./../icon/game-icon.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translateY(-4px);
+}
+
+.left-aside ul li{
+    background-color: #0267c1;
+    color: white;
+    margin: 2rem 1rem .5rem 2rem;
+    width: 200px;
+    height: 30px;
+    padding: 1rem;
+    border-radius: 30px;
+}
+
+.left-aside ul li:hover{
+    transition: linear .3s;
+    cursor: pointer;
+    background-color: #4b9be3;
+}
+
+.left-aside ul li span{
+    margin-left: 3rem;
+}
+
+.profile-card{
+    position: absolute;
+    width: 200px;
+    height: 30px;
+    border-radius: 30px;
+    border-style: solid;
+    border-width: .5px;
+    border-color: #000000;
+    padding: 1rem;
+    margin: 2rem;
+    bottom: 0;
+}
+
+.profile-card:hover{
+    cursor: pointer;
+    transition: linear .3s;
+    background-color: rgb(255, 184, 184);
+}
+
+.profile-card .circle-user{
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    background-color: #4e4e4e;
+    border-radius: 100%;
+    transform: translate(-4px, -10px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.profile-card .your-name{
+    position: absolute;
+    transform: translate(55px, -2px);
+    font-weight: bolder;
+}
+
+.profile-card .your-user{
+    position: absolute;
+    transform: translate(55px, 16px);
+    font-weight: bolder;
+    font-size: 10pt;
+    color: #4e4e4e;
+}
+/* -------------------- */
+
+/* Profile Area */
+
+.profile-area{
+    position: absolute;
+    width: 75%;
+    height: 100%;
+    background-color: #fff;
+    right: 0;
+    z-index: -1;
+}
+
+.profile-area .bios-area .edit-btn{
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    border-radius: 30px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #000000;
+    right: 1rem;
+    margin-top: 1rem;
+}
+
+.profile-area .bios-area .edit-btn:hover{
+    transition: linear .3s;
+    cursor: pointer;
+    background-color: rgb(221, 221, 221);
+}
+
+.profile-area .bios-area .edit-btn span{
+    position: absolute;
+    font-weight: bolder;
+    margin-left: 10px;
+    margin-top: 7px;
+    font-size: 10pt;
+}
+
+.profile-area .bios-area{
+    width: 100%;
+    height: auto;
+    padding-bottom: 2rem;
+    border-bottom-color: #000000;
+    border-bottom-width: .5px;
+    border-bottom-style: solid;
+}
+
+.profile-area .bios-area .cape{
+    width: 100%;
+    height: 200px;
+    background-color: #4e4e4e;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.profile-area .bios-area .cape .circle-user-bios{
+    border-style: solid;
+    border-color: #fff;
+}
+
+.profile-area .bios-area .datas{
+    list-style: none;
+    margin: 6rem 0rem 0rem 3rem;
+}
+
+.profile-area .bios-area .datas .name{
+    font-weight: bolder;
+    font-size: 20pt;
+}
+
+.profile-area .bios-area .datas .username{
+    font-size: 12pt;
+    font-weight: bolder;
+    color: #4e4e4e;
+}
+
+.profile-area .bios-area .datas .description{
+    margin-top: 1.5rem;
+    width: 70%;
+}

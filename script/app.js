@@ -47,11 +47,14 @@
                     localStorage.setItem('worldbookuid', user.uid)
                     const db = getDatabase();
                     set(ref(db, 'user/' + user.uid), {
+                        description: 'Bem vindo ao WorldBook',
                         profile_picture: '',
                         uid: user.uid,
                         name: user.displayName,
                         username: '@' + user.displayName.replace(' ', '_'),
-                        email: user.email
+                        email: user.email,
+                        verified: 'false',
+                        background: '',
                     })
                     
                 }
@@ -81,8 +84,9 @@ setInterval(()=>{
     const firstName = document.getElementById('select-first-name').value
     const lastName = document.getElementById('select-last-name').value
     const username = document.getElementById('select-user').value
+    const description = document.getElementById('description-user').value
 
-    if(firstName == '' || lastName == '' || username == ''){
+    if(firstName == '' || lastName == '' || username == '' || description == ''){
         document.getElementById('update-btn').style.opacity = '.6'
         document.getElementById('update-btn').style.cursor = 'default'
     }else{
@@ -95,25 +99,43 @@ setInterval(()=>{
 
 }, 100*5)
 
+    //image upload
+    function getImage(){
+        if(document.getElementById('select-picture').files.length != 0){
+            var imageFile = document.getElementById('select-picture').files[0]
+            var reader = new FileReader();
+            reader.readAsDataURL(imageFile);
+            reader.onload = ()=>{
+                if(document.getElementById('profile-picture').style.backgroundImage != ''){
+                    document.getElementById('profile-picture').style.display = 'block'
+
+                }
+                document.getElementById('profile-picture').style.backgroundImage = 'url(' + reader.result + ')'
+            }
+        }
+    }
+    setInterval(getImage, 100*5)
 
 document.getElementById('update-btn').addEventListener('click', ()=>{
 
     const firstName = document.getElementById('select-first-name').value
     const lastName = document.getElementById('select-last-name').value
     const username = document.getElementById('select-user').value
+    const description = document.getElementById('description-user').value
 
     if(firstName != '' && lastName != '' && username != ''){
         const db = getDatabase();
         update(ref(db, 'user/' + localStorage.getItem('worldbookuid')), {
-            profile_picture: '',
+            profile_picture: document.getElementById('profile-picture').style.backgroundImage.replaceAll('url(', '').replaceAll(')', '').replaceAll('"', ''),
             name: firstName + ' ' + lastName,
             username: '@' + username.replace(' ', '_'),
+            description: description,
         })
         setTimeout(()=>{window.location.replace("timeline.html")}, 1000*2)
     }
 })
 
 document.getElementById('skip-btn').addEventListener('click', ()=>{
-    window.location.replace("timeline.html")
+    window.location.assign("timeline.html")
     
 })
