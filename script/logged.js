@@ -171,6 +171,23 @@ document.getElementById('post-btn').addEventListener('click', ()=>{
     } 
 })
 
+//Loading Users List
+
+    get(child(dbRef, 'user/')).then((snapshot) => {
+        if (snapshot.exists()) {
+            snapshot.forEach((childSnapshot)=>{
+                const data = childSnapshot.val()
+                const userList = document.getElementById('users-list')
+
+                userList.innerHTML += '<li class="user-box" id="user-box"><ul class="elements-box"><li><div class="circle-user" id="circleUserList" style="background-image: url(' + data.profile_picture + ')"></div></li><li><ul class="user-name-box"><li class="name-user">' + data.name + '</li><li class="username">' + data.username + '</li><li class="description">' + data.description + '</li></ul></li></ul></li>'
+            })
+        } else {
+        console.log("No data available");
+        }
+    }).catch((error) => {
+        console.error(error);
+    });
+
 //loading
 setInterval(()=>{
     if(document.getElementById('your-name').innerHTML != ''){
