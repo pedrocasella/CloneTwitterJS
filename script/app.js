@@ -18,7 +18,6 @@
  const database = getDatabase(app);
  
  //login
-
     document.getElementById('logIn-btn').addEventListener('click', ()=>{
         const auth = getAuth();
         signInWithRedirect(auth, provider);

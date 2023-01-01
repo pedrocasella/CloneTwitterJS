@@ -534,3 +534,89 @@
         overflow: hidden;
         margin-top: 4px;
     }
+
+/* Cellphone */
+
+@media screen and (max-width: 1093px){
+
+    /* Aside Left*/
+    .left-aside{
+        position: fixed;
+        display: block;
+        bottom: 0;
+        width: 100%;
+        height: 10%;
+        border-right-style: none;
+        border-left-style: none;
+        border-top-style: solid;
+        background-color: #ffffffff;
+        border-top-width: .5px;
+        -webkit-box-shadow: 2px -6px 15px 5px rgba(0,0,0,0.1); 
+        box-shadow: 2px -6px 15px 5px rgba(0,0,0,0.1);
+
+    }
+
+    .left-aside .nav-left{
+        display: inline-flex;
+        margin-top: .5rem;
+    }
+
+    .left-aside .nav-left span{
+        display: none;
+    }
+
+    .left-aside .nav-left li{
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        margin: .5rem;
+    }
+
+    .left-aside .nav-left li div{
+        width: 15px;
+        height: 15px;
+        transform: translate(-3px, -3px);
+    }
+
+    .profile-card{
+        position: relative;
+        width: 20px;
+        height: 20px;
+        border-radius: 30px;
+        margin: -3.3rem 0rem 0rem 1rem;
+    }
+
+    .profile-card .circle-user{
+        width: 40px;
+        height: 40px;
+        transform: translate(-9px, -10px);
+    }
+
+    .profile-card span{
+        display: none;
+    }
+
+
+    /* Aside Left*/
+    .right-aside{
+        display: none;
+    }
+
+    /* TimeLine */
+
+    .timeline{
+        width: 100%;
+        left: 0;
+    }
+
+    .timeline .post-area .post-text{
+        margin-left: 22%;
+    }
+    .timeline .hr-text-post{
+        margin-left: 22%;
+    }
+
+    .user-post .time-post{
+        margin: .5rem 0rem .5rem 65%;
+    } 
+}
