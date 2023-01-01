@@ -22,7 +22,7 @@ import { getDatabase, ref, set, child, get, update, push, onValue } from "https:
     function setName(data){
         for(let i = 0; i<= document.querySelectorAll('#your-name').length; i++){
             if(data.verified == 'true'){
-                document.querySelectorAll('#your-name')[i].innerHTML = data.name + '<div class="verified-icon" id="verified-icon"></div>'
+                document.querySelectorAll('#your-name')[i].innerHTML = data.name + '<span class="verified-icon" id="verified-icon"></span>'
                 document.querySelectorAll('#your-user')[i].innerHTML = data.username
             }else{
                 document.querySelectorAll('#your-name')[i].innerHTML = data.name
