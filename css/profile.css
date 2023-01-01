@@ -299,6 +299,15 @@
     font-weight: bolder;
 }
 
+.profile-card .your-name .verified-icon{
+    background-image: url(./../icon/verified-icon.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 10px;
+    background-size: 15px;
+
+}
+
 .profile-card .your-user{
     position: absolute;
     transform: translate(55px, 16px);
@@ -376,6 +385,14 @@
 .profile-area .bios-area .datas .name{
     font-weight: bolder;
     font-size: 20pt;
+}
+
+.profile-area .bios-area .datas .name .verified-icon{
+    background-image: url(./../icon/verified-icon.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 15px;
+    background-size: 25px;
 }
 
 .profile-area .bios-area .datas .username{

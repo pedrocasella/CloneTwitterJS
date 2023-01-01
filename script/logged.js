@@ -21,8 +21,14 @@ import { getDatabase, ref, set, child, get, update, push, onValue } from "https:
     //set name and username of user
     function setName(data){
         for(let i = 0; i<= document.querySelectorAll('#your-name').length; i++){
-            document.querySelectorAll('#your-name')[i].innerHTML = data.name
-            document.querySelectorAll('#your-user')[i].innerHTML = data.username
+            if(data.verified == 'true'){
+                document.querySelectorAll('#your-name')[i].innerHTML = data.name + '<div class="verified-icon" id="verified-icon"></div>'
+                document.querySelectorAll('#your-user')[i].innerHTML = data.username
+            }else{
+                document.querySelectorAll('#your-name')[i].innerHTML = data.name
+                document.querySelectorAll('#your-user')[i].innerHTML = data.username
+            }
+            
         }        
     }
     const dbRef = ref(getDatabase());
@@ -64,7 +70,6 @@ import { getDatabase, ref, set, child, get, update, push, onValue } from "https:
                   for(let i = 0; i <= document.querySelectorAll('#circleUser' + data.uid).length; i++){
                     document.querySelectorAll('#circleUser' + data.uid)[i].style.backgroundImage = 'url(' + data.profile_picture + ')'
                   }
-                  console.log(data)
                   }).catch((error) => {
                     console.error(error);
                   });
@@ -178,8 +183,12 @@ document.getElementById('post-btn').addEventListener('click', ()=>{
             snapshot.forEach((childSnapshot)=>{
                 const data = childSnapshot.val()
                 const userList = document.getElementById('users-list')
-
-                userList.innerHTML += '<li class="user-box" id="user-box"><ul class="elements-box"><li><div class="circle-user" id="circleUserList" style="background-image: url(' + data.profile_picture + ')"></div></li><li><ul class="user-name-box"><li class="name-user">' + data.name + '</li><li class="username">' + data.username + '</li><li class="description">' + data.description + '</li></ul></li></ul></li>'
+                if(data.verified == 'true'){
+                    userList.innerHTML += '<li class="user-box" id="user-box"><ul class="elements-box"><li><div class="circle-user" id="circleUserList" style="background-image: url(' + data.profile_picture + ')"></div></li><li><ul class="user-name-box"><li class="name-user">' + data.name + '<span class="verified-icon" id="verified-icon"></span>'+ '</li><li class="username">' + data.username  + '</li><li class="description">' + data.description + '</li></ul></li></ul></li>'
+                }else{
+                    userList.innerHTML += '<li class="user-box" id="user-box"><ul class="elements-box"><li><div class="circle-user" id="circleUserList" style="background-image: url(' + data.profile_picture + ')"></div></li><li><ul class="user-name-box"><li class="name-user">' + data.name + '</li><li class="username">' + data.username + '</li><li class="description">' + data.description + '</li></ul></li></ul></li>'
+                }
+                
             })
         } else {
         console.log("No data available");

@@ -30,8 +30,14 @@ import { getDatabase, ref, set, child, get, update, push, onValue } from "https:
             document.getElementById('switch-description-input').value = data.description
             description.innerHTML = data.description
             for(let i = 0; i <= document.querySelectorAll('#your-name').length; i++){
-                document.querySelectorAll('#your-name')[i].innerHTML = data.name
-                document.querySelectorAll('#your-user')[i].innerHTML = data.username
+                if(data.verified == 'true'){
+                    document.querySelectorAll('#your-name')[i].innerHTML = data.name + '<span class="verified-icon" id="verified-icon"></span>'
+                    document.querySelectorAll('#your-user')[i].innerHTML = data.username
+                }else{
+                    document.querySelectorAll('#your-name')[i].innerHTML = data.name
+                    document.querySelectorAll('#your-user')[i].innerHTML = data.username
+                }
+                
             }
             for(let i = 0; i <= document.querySelectorAll('#circle-user').length; i++){
                 document.querySelectorAll('#circle-user')[i].style.backgroundImage = 'url(' + data.profile_picture + ')'
