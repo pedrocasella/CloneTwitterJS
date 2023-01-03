@@ -40,6 +40,7 @@
                 if (snapshot.exists()) {
                     console.log(snapshot.val());
                     localStorage.setItem('worldbookuid', user.uid)
+                    localStorage.setItem('worldbookoriginaluid', user.uid)
                     window.location.replace("timeline.html")
                 } else {
                     document.getElementById('sign-up').style.display = 'block'
