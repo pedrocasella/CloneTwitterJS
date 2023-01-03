@@ -219,3 +219,15 @@ setInterval(()=>{
     document.getElementById('profile').addEventListener('click', ()=>{
         window.location.replace('profile.html')
     })
+
+    //open search
+    document.getElementById('search').addEventListener('click', ()=>{
+        document.getElementById('right-aside').style.display = 'block'
+        document.getElementById('timeline').style.display = 'none'
+    })
+
+    //close search
+    document.getElementById('close-search').addEventListener('click', ()=>{
+        document.getElementById('right-aside').style.display = 'none'
+        document.getElementById('timeline').style.display = 'block'
+    })

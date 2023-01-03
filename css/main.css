@@ -349,6 +349,17 @@
     transform: translateY(-4px);
 }
 
+.left-aside ul li .search-icon{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background-image: url(./../icon/search-icon.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translateY(-4px);
+}
+
 .left-aside ul li{
     background-color: #0267c1;
     color: white;
@@ -363,6 +374,15 @@
     transition: linear .3s;
     cursor: pointer;
     background-color: #4b9be3;
+}
+
+.left-aside ul .search{
+    display: none;
+    background-color: rgb(255, 215, 215);
+}
+
+.left-aside ul .search:hover{
+    background-color: rgb(247, 172, 172);
 }
 
 .left-aside ul li span{
@@ -420,6 +440,17 @@
 }
 
 /* Right Aside */
+
+.close-search{
+    display: none;
+    position: absolute;
+    font-weight: bolder;
+    margin-left: 90%;
+}
+
+.close-search:hover{
+    cursor: pointer;
+}
 
 .right-aside h4{
     text-align: left;
@@ -570,6 +601,10 @@
         margin: .5rem;
     }
 
+    .left-aside ul .search{
+        display: block;
+    }
+
     .left-aside .nav-left li div{
         width: 15px;
         height: 15px;
@@ -595,9 +630,14 @@
     }
 
 
-    /* Aside Left*/
+    /* Aside Right*/
+    .close-search{
+        display: block;
+    }
+
     .right-aside{
         display: none;
+        width: 100%;
     }
 
     /* TimeLine */
