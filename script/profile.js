@@ -131,6 +131,8 @@ import { getDatabase, ref, set, child, get, update, push, onValue } from "https:
  //redirect to home
  document.getElementById('home').addEventListener('click', ()=>{
     window.location.assign('timeline.html')
+    localStorage.setItem('worldbookuid', localStorage.getItem('worldbookoriginaluid'))
+    localStorage.setItem('worldbookstatusvisit', 'false')
  })
 
 //loading
@@ -139,3 +141,13 @@ setInterval(()=>{
         document.getElementById('loading').style.display = 'none'
     }
 }, 1000*2)
+
+//visibility of edit profile and profile card
+
+if(localStorage.getItem('worldbookstatusvisit') == 'true'){
+    document.getElementById('edit-btn').style.display = 'none'
+    document.getElementById('profile-card').style.display = 'none'
+}else{
+    document.getElementById('edit-btn').style.display = 'block'
+    document.getElementById('profile-card').style.display = 'block'
+}

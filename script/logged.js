@@ -14,9 +14,18 @@ import { getDatabase, ref, set, child, get, update, push, onValue } from "https:
  const app = initializeApp(firebaseConfig);
  const database = getDatabase(app);
 
+//Visit other profile
+localStorage.setItem('worldbookstatusvisit', 'false')
+localStorage.setItem('worldbookoriginaluid', localStorage.getItem('worldbookuid'))
+localStorage.setItem('worldbookuid', localStorage.getItem('worldbookoriginaluid'))
+document.getElementById('users-list').addEventListener('click', (e)=>{
+    const visitId = e.target.id.replace('user-box', '').replace('circleUser', '')
+    localStorage.setItem('worldbookuid', visitId)
+    localStorage.setItem('worldbookstatusvisit', 'true')
+    window.location.assign('profile.html')
+})
 
 //request data
-
 
     //set name and username of user
     function setName(data){
@@ -184,9 +193,9 @@ document.getElementById('post-btn').addEventListener('click', ()=>{
                 const data = childSnapshot.val()
                 const userList = document.getElementById('users-list')
                 if(data.verified == 'true'){
-                    userList.innerHTML += '<li class="user-box" id="user-box"><ul class="elements-box"><li><div class="circle-user" id="circleUserList" style="background-image: url(' + data.profile_picture + ')"></div></li><li><ul class="user-name-box"><li class="name-user">' + data.name + '<span class="verified-icon" id="verified-icon"></span>'+ '</li><li class="username">' + data.username  + '</li><li class="description">' + data.description + '</li></ul></li></ul></li>'
+                    userList.innerHTML += '<li class="user-box" id="user-box' + data.uid + '"><ul class="elements-box" id="' + data.uid + '"><li id="' + data.uid + '"><div class="circle-user" id="circleUser' + data.uid + '" style="background-image: url(' + data.profile_picture + ')"></div></li><li id="' + data.uid + '"><ul class="user-name-box" id="' + data.uid + '"><li class="name-user" id="' + data.uid + '">' + data.name + '<span class="verified-icon" id="' + data.uid + '"></span>'+ '</li><li class="username" id="' + data.uid + '">' + data.username  + '</li><li class="description" id="' + data.uid + '">' + data.description + '</li></ul></li></ul></li>'
                 }else{
-                    userList.innerHTML += '<li class="user-box" id="user-box"><ul class="elements-box"><li><div class="circle-user" id="circleUserList" style="background-image: url(' + data.profile_picture + ')"></div></li><li><ul class="user-name-box"><li class="name-user">' + data.name + '</li><li class="username">' + data.username + '</li><li class="description">' + data.description + '</li></ul></li></ul></li>'
+                    userList.innerHTML += '<li class="user-box" id="user-box' + data.uid + '"><ul class="elements-box" id="' + data.uid + '"><li id="' + data.uid + '"><div class="circle-user" id="circleUser' + data.uid + '" style="background-image: url(' + data.profile_picture + ')"></div></li><li id="' + data.uid + '"><ul class="user-name-box" id="' + data.uid + '"><li class="name-user" id="' + data.uid + '">' + data.name + '</li><li class="username" id="' + data.uid + '">' + data.username + '</li><li class="description" id="' + data.uid + '" >' + data.description + '</li></ul></li></ul></li>'
                 }
                 
             })
