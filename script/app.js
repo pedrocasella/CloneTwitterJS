@@ -35,6 +35,16 @@
             console.log(user)
             //create and sigin user
             function userSection(){
+                setInterval(()=>{
+                    if(document.getElementById('sign-up').style.display == 'none'){
+                        document.getElementById('post-loading').style.display = 'block'
+                        document.getElementById('display-post-loading').style.display = 'block'
+                    }else{
+                        document.getElementById('post-loading').style.display = 'none'
+                        document.getElementById('display-post-loading').style.display = 'none'       
+                    }
+                }, 100*5)
+
                 const dbRef = ref(getDatabase());
                 get(child(dbRef, 'user/' + user.uid)).then((snapshot) => {
                 if (snapshot.exists()) {
@@ -45,6 +55,7 @@
                 } else {
                     document.getElementById('sign-up').style.display = 'block'
                     localStorage.setItem('worldbookuid', user.uid)
+                    localStorage.setItem('worldbookoriginaluid', user.uid)
                     const db = getDatabase();
                     set(ref(db, 'user/' + user.uid), {
                         description: 'Bem vindo ao WorldBook',
